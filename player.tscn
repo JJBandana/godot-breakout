@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://brs3vy8cnsedl"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_fqs6m"]
+[ext_resource type="Texture2D" uid="uid://dv6ktsaq7ae0q" path="res://palet.png" id="2_20veb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kint"]
+size = Vector2(32, 8)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_fqs6m")
+
+[node name="Palet" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_20veb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kint")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -8)

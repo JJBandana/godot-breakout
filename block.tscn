@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dorv2i85ueas6"]
+
+[ext_resource type="Script" path="res://block.gd" id="1_px5ld"]
+[ext_resource type="Texture2D" uid="uid://dv6ktsaq7ae0q" path="res://palet.png" id="1_t0lvx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diqpw"]
+size = Vector2(18, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li3hm"]
+size = Vector2(16, 4)
+
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_px5ld")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(0.976471, 0.282353, 0.654902, 1)
+shape = SubResource("RectangleShape2D_diqpw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.4, 0.184314, 0.282353, 1)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_t0lvx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_li3hm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_ball_entered"]

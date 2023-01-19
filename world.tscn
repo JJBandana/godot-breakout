@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn0brcprdaj6f"]
+
+[ext_resource type="Texture2D" uid="uid://df881mfoqw0eo" path="res://background.png" id="1_7btl7"]
+[ext_resource type="Script" path="res://world.gd" id="1_baj20"]
+[ext_resource type="PackedScene" uid="uid://dorv2i85ueas6" path="res://block.tscn" id="3_yo4ow"]
+[ext_resource type="PackedScene" uid="uid://b3tlabocuxod4" path="res://ball.tscn" id="4_bd8i7"]
+[ext_resource type="PackedScene" uid="uid://dfbn83m30pghq" path="res://character.tscn" id="6_7acix"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_baj20")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+texture = ExtResource("1_7btl7")
+centered = false
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 20)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 25)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 30)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 35)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 40)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(27, 45)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 20)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 25)
+
+[node name="Block9" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 30)
+
+[node name="Block10" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 35)
+
+[node name="Block11" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 40)
+
+[node name="Block12" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(45, 45)
+
+[node name="Block13" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 20)
+
+[node name="Block14" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 25)
+
+[node name="Block15" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 30)
+
+[node name="Block16" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 35)
+
+[node name="Block17" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 40)
+
+[node name="Block18" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(63, 45)
+
+[node name="Block19" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 20)
+
+[node name="Block20" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 25)
+
+[node name="Block21" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 30)
+
+[node name="Block22" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 35)
+
+[node name="Block23" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 40)
+
+[node name="Block24" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(93, 45)
+
+[node name="Block25" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 20)
+
+[node name="Block26" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 25)
+
+[node name="Block27" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 30)
+
+[node name="Block28" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 35)
+
+[node name="Block29" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 40)
+
+[node name="Block30" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(111, 45)
+
+[node name="Block31" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 20)
+
+[node name="Block32" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 25)
+
+[node name="Block33" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 30)
+
+[node name="Block34" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 35)
+
+[node name="Block35" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 40)
+
+[node name="Block36" parent="Blocks" instance=ExtResource("3_yo4ow")]
+position = Vector2(129, 45)
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Top"]
+polygon = PackedVector2Array(2, 2, 158, 2, 158, 144, 160, 0, 0, 0, 2, 144)
+
+[node name="Ball" parent="." instance=ExtResource("4_bd8i7")]
+position = Vector2(80, 117)
+scale = Vector2(0.5, 0.5)
+
+[node name="Character" parent="." instance=ExtResource("6_7acix")]
+position = Vector2(75, 123)
+size = 2
+
+[connection signal="out_bounds" from="Ball" to="." method="_on_ball_out_bounds"]
