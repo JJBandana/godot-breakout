@@ -16,7 +16,7 @@ func _physics_process(delta):
 	elif not fired:
 		return
 		
-	velocity = direction * speed * speed
+	velocity = direction * speed * delta
 	
 	var collision_obj = move_and_collide(velocity)
 	if collision_obj:

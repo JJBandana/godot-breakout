@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuu2rsffy1kjg"]
+
+[ext_resource type="Texture2D" uid="uid://d2b8p3wu3gsea" path="res://hearts_empty.png" id="1_kp2or"]
+[ext_resource type="Texture2D" uid="uid://dqcvtrrc31i4g" path="res://hearts_filled.png" id="2_6311v"]
+
+[node name="Lifes" type="Control"]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -8.0
+offset_right = 24.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 3.0
+value = 3.0
+texture_under = ExtResource("1_kp2or")
+texture_progress = ExtResource("2_6311v")
