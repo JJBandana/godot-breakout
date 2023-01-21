@@ -42,3 +42,5 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 65536)
 position = Vector2(5, 4)
 shape = SubResource("RectangleShape2D_0fv7q")
 disabled = true
+
+[node name="Marker2D" type="Marker2D" parent="."]

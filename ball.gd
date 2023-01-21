@@ -5,9 +5,9 @@ class_name Ball
 signal out_bounds
 
 var fired : bool = false
-@export var speed : float = 100
 
-@export var direction = Vector2(0, -1)
+@export var speed : float = 100
+@export var direction = Vector2([-1,1][randi()%2], -1)
 
 func _physics_process(delta):
 	
@@ -25,5 +25,6 @@ func _physics_process(delta):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	fired = false
+	direction = Vector2([-1,1][randi()%2], -1)
 	emit_signal("out_bounds")
 	

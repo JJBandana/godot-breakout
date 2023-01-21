@@ -3,7 +3,12 @@ extends CharacterBody2D
 @export var speed: float = 100
 @export var size: int = 4
 
+@onready var ball: CharacterBody2D = $Ball
+
 var direction = 0
+
+func _ready():
+	set_size(size)
 
 func _physics_process(_delta):
 	direction = Input.get_axis("left", "right")
@@ -18,9 +23,7 @@ func _physics_process(_delta):
 var leftPart = Vector2i(0,0)
 var middlePart = Vector2i(1,0)
 
-func _ready():
-	
-	set_size(size)
+
 
 func set_size(large: int = 3):
 	assert(large >= 1, "ERROR: length must be greater than 0")
