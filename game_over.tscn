@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dumecf2ea1jg5"]
+[gd_scene load_steps=2 format=3 uid="uid://dumecf2ea1jg5"]
+
+[ext_resource type="FontFile" uid="uid://60csi8svro6t" path="res://PressStart2P-Regular.ttf" id="1_1j17t"]
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -25,11 +27,11 @@ theme_override_constants/separation = 15
 alignment = 1
 
 [node name="Game Over" type="Label" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 17
+theme_override_fonts/font = ExtResource("1_1j17t")
+theme_override_font_sizes/font_size = 8
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -37,6 +39,8 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1j17t")
+theme_override_font_sizes/font_size = 8
 text = "REPLAY"
 
 [node name="Score" type="Label" parent="."]
@@ -49,6 +53,7 @@ offset_left = -34.5
 offset_right = 34.5
 offset_bottom = 26.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("1_1j17t")
+theme_override_font_sizes/font_size = 8
 text = "SCORE: 0"
 horizontal_alignment = 1
